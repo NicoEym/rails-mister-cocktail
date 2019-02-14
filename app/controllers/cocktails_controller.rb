@@ -11,9 +11,6 @@ class CocktailsController < ApplicationController
   def show
   end
 
-  def edit
-  end
-
   def create
     @cocktail = Cocktail.new(cocktail_params)
     @cocktail.save

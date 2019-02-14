@@ -10,3 +10,8 @@
 console.log('Hello World from Webpacker')
 // app/javascript/packs/application.js
 import 'bootstrap';
+import { multipleSelect } from "../components/select";
+import { toggleForm } from "../components/form";
+
+multipleSelect();
+toggleForm();

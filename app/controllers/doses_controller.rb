@@ -7,14 +7,24 @@ class DosesController < ApplicationController
   end
 
   def create
-    @dose = Dose.new(dose_params)
-    # we need `cocktail_id` to asssociate dose with corresponding cocktail
-    @dose.cocktail = @cocktail
-    if @dose.save
-      redirect_to cocktail_path(@cocktail)
-    else
-      render :new
+    # @dose = Dose.new(dose_params)
+    # # we need `cocktail_id` to asssociate dose with corresponding cocktail
+    # @dose.cocktail = @cocktail
+    # if @dose.save
+    #   redirect_to cocktail_path(@cocktail)
+    # else
+    #   render :new
+    # end
+
+    @ingredients = Ingredient.find(params[:dose][:ingredient_id])
+    @ingredients.each do |ingredient|
+      dose = Dose.new
+      dose.cocktail = @cocktail
+      dose.ingredient = ingredient
+      dose.description = params[:dose][:description]
+      dose.save
     end
+    redirect_to cocktail_path(@cocktail)
   end
 
   private
