@@ -4,7 +4,7 @@
     <%= simple_form_for [@cocktail] do |f| %>
     <%= f.input :name %>
     <%= f.submit "Add a cocktail", class: "btn btn-primary" %>
-    <%= link_to "Cancel", cocktails_path, {:class=>"btn btn-default"} %>
+    <%= link_to "Back to cocktails", cocktails_path, {:class=>"btn btn-default"} %>
     <% end %>
   </div>
 </div>

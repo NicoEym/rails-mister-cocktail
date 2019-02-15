@@ -1,7 +1,7 @@
 class DosesController < ApplicationController
   before_action :set_cocktail, only: [:new, :create]
   def new
-    # we need @restaurant in our `simple_form_for
+    # we need @cocktails in our `simple_form_for
     @dose = Dose.new
   end
 
