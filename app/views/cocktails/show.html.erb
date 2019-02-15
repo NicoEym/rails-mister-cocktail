@@ -1,18 +1,13 @@
-<p id="notice"><%= notice %></p>
-
-<h2>
-  <strong>Name:</strong>
-  <%= @cocktail.name %>
-</h2>
-
-
-<h3><strong>Ingredients:</strong></h3>
-<% @cocktail.doses.each do |dose| %>
-  <p><%= dose.ingredient.name %> - <%= dose.description %> - <%= link_to 'Delete this dose', dose_path(dose.id),
-      method: :delete,
-      data: { confirm: "Are you sure?" }%></p>
-<% end %>
-
-
-<p><%= link_to 'Add ingredients', new_cocktail_dose_path(@cocktail.id) %></p>
-<p><%= link_to 'Back', cocktails_path %></p>
+<div class="banner" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), url('<%= cl_image_path @cocktail.photo %>');">
+  <div class="banner-content">
+    <h1><%= @cocktail.name %></h1>
+    <h3><strong>Ingredients:</strong></h3>
+    <% @cocktail.doses.each do |dose| %>
+      <p><%= dose.ingredient.name %> - <%= dose.description %> - <%= link_to 'Delete this dose', dose_path(dose.id),
+          method: :delete,
+          data: { confirm: "Are you sure?" }%></p>
+    <% end %>
+    <p><%= link_to 'Add ingredients', new_cocktail_dose_path(@cocktail.id), class: "btn btn-primary" %>
+    <%= link_to 'Back', cocktails_path, {:class=>"btn btn-default"} %></p>
+  </div>
+</div>

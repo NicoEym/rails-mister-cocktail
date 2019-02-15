@@ -31,6 +31,7 @@
 .card-category {
   background-size: cover;
   background-position: center;
+  position: relative;
   height: 180px;
   color: white;
   font-size: 24px;
@@ -38,12 +39,24 @@
   text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
   border-radius: 2px;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
-  border: 10px;
+  margin: 5px;
+  a {
+    text-decoration: none;
+    color: white;
+  }
 }
+  .card-remove-link {
+    position: absolute;
+    top: 5px;
+    right: 10px;
+    border: 1px;
+    border-radius: 50%;
+    border-color: white;
+  }
+  .card-cocktail-link {
 
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+  }
 
-.cocktail-link {
-   display: block;
-    width:100%;
-    line-height:30px;
-}

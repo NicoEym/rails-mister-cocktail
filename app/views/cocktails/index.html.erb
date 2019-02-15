@@ -1,4 +1,4 @@
-<div class="banner" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), url('https://images.unsplash.com/photo-1523905491727-d82018a34d75?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60');">
+<div class="banner" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), url('https://res.cloudinary.com/dzxrdf9za/image/upload/v1550245820/uiyz3zpal0csqcboqeon.jpg');">
   <div class="banner-content">
     <h1>My cocktails</h1>
     <p>Discover some amazing cocktails</p>
@@ -10,8 +10,8 @@
   <div class="row">
   <% @cocktails.each do |cocktail| %>
     <div class="col-xs-12 col-sm-6 col-md-4">
-      <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://images.unsplash.com/photo-1531387367216-681093c0279b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60)">
-      <div class="cocktail-link"> <%= link_to cocktail.name, cocktail_path(cocktail) %>
+      <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path cocktail.photo %>')">
+      <div class="cocktail-link"> <%= link_to cocktail.name, cocktail_path(cocktail), class: "card-cocktail-link" %>
       </div>
       <%= link_to "X", cocktail_path(cocktail), method: :delete, data: { confirm: "Are you sure?" }, class: "card-remove-link" %>
     </div>
