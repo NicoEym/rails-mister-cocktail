@@ -27,6 +27,16 @@
   margin-bottom: 30px;
 }
 
+  .card-remove-link {
+    position: absolute;
+    top: 5px;
+    right: 10px;
+    border: 1px;
+    border-radius: 50%;
+    border-color: white;
+    opacity: 0;
+  }
+
 
 .card-category {
   background-size: cover;
@@ -40,23 +50,34 @@
   border-radius: 2px;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   margin: 5px;
+  box-shadow: 2px;
+  opacity: 1.0;
   a {
     text-decoration: none;
     color: white;
+    }
+  &:hover {
+    opacity: 0.8;
+    .card-remove-link {
+      opacity: 1;
+    }
   }
-}
-  .card-remove-link {
-    position: absolute;
-    top: 5px;
-    right: 10px;
-    border: 1px;
-    border-radius: 50%;
-    border-color: white;
-  }
-  .card-cocktail-link {
 
+}
+
+.cocktail-link {
+  display:inline-block;
+  height: 100%;
+  width: 100%;
+
+}
+
+
+  .cocktail-name {
     position: absolute;
     bottom: 10px;
     left: 10px;
   }
+
+
 
